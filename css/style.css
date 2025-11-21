@@ -43,6 +43,7 @@ a:hover {
   font-size: 0.8em;
   color: #666;
   margin-top: 5px;
+  text-align: center;
 }
 
 .restaurant-name {
@@ -514,14 +515,6 @@ body, html {
   height: 100%;
 }
 
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 
 /* Party Booking Section */
 .party-booking {
@@ -596,61 +589,6 @@ body, html {
 .contact-form button:hover {
   background-color: #005fa3;
 }
-.contact-image {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.contact-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.image-caption {
-  font-size: 0.95em;
-  color: #555;
-  margin-top: 8px;
-  font-style: italic;
-}
-.contact-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* centers horizontally */
-  margin: 20px 0;
-}
-
-.contact-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: block;  /* remove any inline spacing */
-}
-
-.image-caption {
-  font-size: 0.95em;
-  color: #555;
-  margin-top: 8px;
-  font-style: italic;
-  text-align: center; /* just in case */
-  max-width: 400px; /* optional: limit caption width */
-}
-.contact-image img {
-  width: 1000px; /* or any px value */
-  max-width: 100%;
-}
-
-/* General wrapper and page layout */
-.wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  line-height: 1.6;
-}
 
 /* Header */
 header {
@@ -685,11 +623,7 @@ nav ul.nav-links li a {
 nav ul.nav-links li a.active,
 nav ul.nav-links
 
-/* Reset browser spacing */
-html, body {
-  margin: 0;
-  padding: 0;
-}
+
 
 
 /* Header and Navigation */
@@ -908,5 +842,174 @@ footer {
   padding: 1rem 0;
   border-top: 1px solid #ccc;
   font-size: 0.9rem;
+}
+/* Center About Us figure and caption */
+/* Force About Us figure and caption to center */
+/* Isolate About Us figure from parent flex layout */
+figure.aboutus.image {
+  display: block !important;       /* remove flex influence */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;   /* center caption text */
+  width: auto !important;
+}
+
+figure.aboutus.image img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+figure.aboutus.image figcaption {
+  display: block !important;
+  text-align: center !important;
+  margin-top: 10px !important;
+  font-style: italic;
+  color: #555;
+  max-width: 600px;                /* optional: keeps caption readable */
+}
+figure.aboutus.image {
+  display: flex;                /* make figure a flex container */
+  flex-direction: column;       /* stack image + caption vertically */
+  align-items: center;          /* center horizontally */
+  justify-content: flex-start;  /* keep top aligned */
+  text-align: center;           /* fallback for older browsers */
+  margin: 20px 0;               /* spacing above/below figure */
+  width: auto;
+}
+
+figure.aboutus.image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure.aboutus.image figcaption {
+  text-align: center;           /* centers caption text */
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+  max-width: 600px;             /* optional: keeps text readable */
+}
+/* Center About Us figure and caption (forced override) */
+figure.aboutus.image {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;       /* horizontally center image and caption */
+  justify-content: flex-start !important;
+  text-align: center !important;
+  margin: 20px 0 !important;
+  width: auto !important;
+}
+
+figure.aboutus.image img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+figure.aboutus.image figcaption {
+  display: block !important;
+  text-align: center !important;
+  margin-top: 10px !important;
+  font-style: italic !important;
+  color: #555 !important;
+  max-width: 600px !important;          /* optional: keeps caption readable */
+}
+.aboutus-image {
+  text-align: center; /* Center the caption and image */
+  margin: 0 auto; /* Optional: center the figure block itself */
+}
+
+.aboutus-image img {
+  max-width: 100%; /* Make image responsive */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center image horizontally */
+}
+
+.aboutus-image figcaption {
+  margin-top: 0.5rem; /* Space between image and caption */
+  font-size: 0.9rem;
+  color: #555; /* optional: softer color for caption */
+  text-align: center; /* Center text */
+}
+.aboutus.image {
+  display: flex;            /* Stack content vertically */
+  flex-direction: column;
+  align-items: center;      /* Center horizontally */
+  text-align: center;       /* Center caption text */}
+
+/* Make the body take full viewport height and remove default margins */
+body {
+  display: flex;
+  justify-content: center;   /* Horizontal centering */
+  align-items: center;       /* Vertical centering */
+  min-height: 100vh;         /* Full height of viewport */
+  margin: 0;
+  flex-direction: column;    /* Stack figure, header, etc., vertically if needed */
+}
+
+.aboutus.image {
+  display: flex;
+  flex-direction: column;    /* Stack image and caption vertically */
+  align-items: center;       /* Center image and caption horizontally */
+  text-align: center; 
+  
+}
+
+.aboutus.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.aboutus.image figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+/* Make the contact image section full-width */
+/* Make the hero header full width */
+.hero-header {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Make image full width and centered */
+.contact-image {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contact-image figcaption {
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.wrapper {
+  max-width: 900px;      /* keeps text in a readable column */
+  margin: 0 auto;        /* centers everything */
+  padding: 20px;         /* adds spacing inside */
+  line-height: 1.6;      /* improves readability */
 }
 
